@@ -1,26 +1,48 @@
 <resources>
-    <!-- Title of app -->
-    <string name="app_name">Two Activities</string>
-
-    <!-- Title of second activity -->
-    <string name="activity2_name">Second Activity</string>
-
-    <!-- Message header text (in second activity) [CHAR LIMIT=30]-->
-    <string name="text_header">Message Received</string>
-
-    <!-- Button label in main activity [CHAR LIMIT=10]-->
-    <string name="button_main">Send</string>
-
-    <!-- Hint for message edit text in main activity [CHAR LIMIT=30]-->
-    <string name="editText_main">Enter Your Message Here</string>
-
-    <!-- Button label in second activity [CHAR LIMIT=10]-->
-    <string name="button_second">Reply</string>
-
-    <!-- Hint for reply edit text in second activity [CHAR LIMIT=30]-->
-    <string name="editText_second">Enter Your Reply Here</string>
-
-    <!-- Reply header text in main activity [CHAR LIMIT=30]-->
-    <string name="text_header_reply">Reply Received</string>
-
+    <string name="app_name">Challenge6</string>
+    <string name="teks1">"Teks ini adalah Pertama."
+                        "Teks ini dirancang untuk menjadi sangat panjang sehingga memerlukan ScrollView untuk ditampilkan dengan benar. "
+                        "ScrollView memungkinkan pengguna untuk menggulir melalui konten yang lebih besar daripada layar perangkat. "
+                        "Pada dasarnya, ScrollView berguna dalam menampilkan teks atau konten panjang seperti dokumen, deskripsi, atau artikel. "
+                        "Ini adalah contoh bagaimana teks panjang dapat dimuat ke dalam aplikasi Android dan dapat digulir dengan nyaman. "
+                        "Kita bisa menambahkan lebih banyak kalimat di sini untuk menunjukkan bahwa teks benar-benar panjang. "
+                        "Misalnya, mari kita berbicara tentang Android development, di mana kita bisa membuat aplikasi dengan antarmuka yang sangat dinamis. "
+                        "Banyak fitur seperti tombol, gambar, dan teks dapat digunakan untuk menciptakan pengalaman pengguna yang menarik."
+                                "Teks ini dirancang untuk menjadi sangat panjang sehingga memerlukan ScrollView untuk ditampilkan dengan benar. "
+                                "ScrollView memungkinkan pengguna untuk menggulir melalui konten yang lebih besar daripada layar perangkat. "
+                                "Pada dasarnya, ScrollView berguna dalam menampilkan teks atau konten panjang seperti dokumen, deskripsi, atau artikel. "
+                                "Ini adalah contoh bagaimana teks panjang dapat dimuat ke dalam aplikasi Android dan dapat digulir dengan nyaman. "
+                                "Kita bisa menambahkan lebih banyak kalimat di sini untuk menunjukkan bahwa teks benar-benar panjang. "
+                                "Misalnya, mari kita berbicara tentang Android development, di mana kita bisa membuat aplikasi dengan antarmuka yang sangat dinamis. "
+                                "Banyak fitur seperti tombol, gambar, dan teks dapat digunakan untuk menciptakan pengalaman pengguna yang menarik."</string>
+    <string name="teks2">"Teks ini adalah Kedua."
+                        "Teks ini dirancang untuk menjadi sangat panjang sehingga memerlukan ScrollView untuk ditampilkan dengan benar. "
+                        "ScrollView memungkinkan pengguna untuk menggulir melalui konten yang lebih besar daripada layar perangkat. "
+                        "Pada dasarnya, ScrollView berguna dalam menampilkan teks atau konten panjang seperti dokumen, deskripsi, atau artikel. "
+                        "Ini adalah contoh bagaimana teks panjang dapat dimuat ke dalam aplikasi Android dan dapat digulir dengan nyaman. "
+                        "Kita bisa menambahkan lebih banyak kalimat di sini untuk menunjukkan bahwa teks benar-benar panjang. "
+                        "Misalnya, mari kita berbicara tentang Android development, di mana kita bisa membuat aplikasi dengan antarmuka yang sangat dinamis. "
+                        "Banyak fitur seperti tombol, gambar, dan teks dapat digunakan untuk menciptakan pengalaman pengguna yang menarik."
+                                "Teks ini dirancang untuk menjadi sangat panjang sehingga memerlukan ScrollView untuk ditampilkan dengan benar. "
+                                "ScrollView memungkinkan pengguna untuk menggulir melalui konten yang lebih besar daripada layar perangkat. "
+                                "Pada dasarnya, ScrollView berguna dalam menampilkan teks atau konten panjang seperti dokumen, deskripsi, atau artikel. "
+                                "Ini adalah contoh bagaimana teks panjang dapat dimuat ke dalam aplikasi Android dan dapat digulir dengan nyaman. "
+                                "Kita bisa menambahkan lebih banyak kalimat di sini untuk menunjukkan bahwa teks benar-benar panjang. "
+                                "Misalnya, mari kita berbicara tentang Android development, di mana kita bisa membuat aplikasi dengan antarmuka yang sangat dinamis. "
+                                "Banyak fitur seperti tombol, gambar, dan teks dapat digunakan untuk menciptakan pengalaman pengguna yang menarik."</string>
+    <string name="teks3">"Teks ini adalah Ketiga."
+                        "Teks ini dirancang untuk menjadi sangat panjang sehingga memerlukan ScrollView untuk ditampilkan dengan benar. "
+                        "ScrollView memungkinkan pengguna untuk menggulir melalui konten yang lebih besar daripada layar perangkat. "
+                        "Pada dasarnya, ScrollView berguna dalam menampilkan teks atau konten panjang seperti dokumen, deskripsi, atau artikel. "
+                        "Ini adalah contoh bagaimana teks panjang dapat dimuat ke dalam aplikasi Android dan dapat digulir dengan nyaman. "
+                        "Kita bisa menambahkan lebih banyak kalimat di sini untuk menunjukkan bahwa teks benar-benar panjang. "
+                        "Misalnya, mari kita berbicara tentang Android development, di mana kita bisa membuat aplikasi dengan antarmuka yang sangat dinamis. "
+                        "Banyak fitur seperti tombol, gambar, dan teks dapat digunakan untuk menciptakan pengalaman pengguna yang menarik."
+                                "Teks ini dirancang untuk menjadi sangat panjang sehingga memerlukan ScrollView untuk ditampilkan dengan benar. "
+                                "ScrollView memungkinkan pengguna untuk menggulir melalui konten yang lebih besar daripada layar perangkat. "
+                                "Pada dasarnya, ScrollView berguna dalam menampilkan teks atau konten panjang seperti dokumen, deskripsi, atau artikel. "
+                                "Ini adalah contoh bagaimana teks panjang dapat dimuat ke dalam aplikasi Android dan dapat digulir dengan nyaman. "
+                                "Kita bisa menambahkan lebih banyak kalimat di sini untuk menunjukkan bahwa teks benar-benar panjang. "
+                                "Misalnya, mari kita berbicara tentang Android development, di mana kita bisa membuat aplikasi dengan antarmuka yang sangat dinamis. "
+                                "Banyak fitur seperti tombol, gambar, dan teks dapat digunakan untuk menciptakan pengalaman pengguna yang menarik."</string>
 </resources>
