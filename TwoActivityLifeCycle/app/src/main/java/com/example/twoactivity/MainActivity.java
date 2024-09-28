@@ -1,25 +1,12 @@
-/*
- * Copyright (C) 2016 Google Inc.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package com.example.twoactivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 //import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -29,144 +16,82 @@ import androidx.appcompat.app.AppCompatActivity;
  * The TwoActivities app contains two activities and sends messages (intents) between them.
  */
 public class MainActivity extends AppCompatActivity {
-    // Class name for Log tag
+
+    private TextView[] shoppingList;
+    private static final int REQUEST_CODE = 1;
+    private static final String SHOPPING_LIST_KEY = "shoppingList";
     private static final String LOG_TAG = MainActivity.class.getSimpleName();
-    // Unique tag required for the intent extra
-    public static final String EXTRA_MESSAGE = "com.example.android.twoactivities.extra.MESSAGE";
-    // Unique tag for the intent reply
-    public static final int TEXT_REQUEST = 1;
 
-    // EditText view for the message
-    private EditText mMessageEditText;
-    // TextView for the reply header
-    private TextView mReplyHeadTextView;
-    // TextView for the reply body
-    private TextView mReplyTextView;
-
-    /**
-     * Initializes the activity.
-     *
-     * @param savedInstanceState The current state data.
-     */
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Log.d(LOG_TAG, "-------");
-        Log.d(LOG_TAG, "onCreate");
+        // Initialize TextViews
+        shoppingList = new TextView[12];
+        shoppingList[0] = findViewById(R.id.item1);
+        shoppingList[1] = findViewById(R.id.item2);
+        shoppingList[2] = findViewById(R.id.item3);
+        shoppingList[3] = findViewById(R.id.item4);
+        shoppingList[4] = findViewById(R.id.item5);
+        shoppingList[5] = findViewById(R.id.item6);
+        shoppingList[6] = findViewById(R.id.item7);
+        shoppingList[7] = findViewById(R.id.item8);
+        shoppingList[8] = findViewById(R.id.item9);
+        shoppingList[9] = findViewById(R.id.item10);
+        shoppingList[10] = findViewById(R.id.item11);
+        shoppingList[11] = findViewById(R.id.item12);
+        // Continue for the rest of the items...
 
-        // Initialize all the view variables.
-        mMessageEditText = findViewById(R.id.editText_main);
-        mReplyHeadTextView = findViewById(R.id.text_header_reply);
-        mReplyTextView = findViewById(R.id.text_message_reply);
-
-        // Restore the saved state.
-        // See onSaveInstanceState() for what gets saved.
+        // Restore state if available
         if (savedInstanceState != null) {
-            boolean isVisible =
-                    savedInstanceState.getBoolean("reply_visible");
-            // Show both the header and the message views. If isVisible is
-            // false or missing from the bundle, use the default layout.
-            if (isVisible) {
-                mReplyHeadTextView.setVisibility(View.VISIBLE);
-                mReplyTextView.setText(savedInstanceState.getString("reply_text"));
-                mReplyTextView.setVisibility(View.VISIBLE);
+            String[] savedList = savedInstanceState.getStringArray(SHOPPING_LIST_KEY);
+            if (savedList != null) {
+                for (int i = 0; i < savedList.length; i++) {
+                    shoppingList[i].setText(savedList[i]);
+                }
             }
         }
+
+        // Add Item button to launch second activity
+        Button addItemButton = findViewById(R.id.addItemButton);
+        addItemButton.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+            startActivityForResult(intent, REQUEST_CODE);
+            Log.d(LOG_TAG, "masuk ke 2 ");
+        });
     }
 
-
+    // Handle result from second activity
     @Override
-    public void onStart() {
-        super.onStart();
-        Log.d(LOG_TAG, "onStart");
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        Log.d(LOG_TAG, "onPause");
-    }
-
-    @Override
-    public void onRestart() {
-        super.onRestart();
-        Log.d(LOG_TAG, "onRestart");
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        Log.d(LOG_TAG, "onResume");
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        Log.d(LOG_TAG, "onStop");
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        Log.d(LOG_TAG, "onDestroy");
-    }
-
-
-    /**
-     * Handle the onClick for the "Send" button. Gets the value of the main EditText,
-     * creates an intent, and launches the second activity with that intent.
-     * <p>
-     * The return intent from the second activity is onActivityResult().
-     *
-     * @param view The view (Button) that was clicked.
-     */
-    public void launchSecondActivity(View view) {
-        Log.d(LOG_TAG, "Button clicked!");
-
-        Intent intent = new Intent(this, SecondActivity.class);
-        String message = mMessageEditText.getText().toString();
-
-        intent.putExtra(EXTRA_MESSAGE, message);
-        startActivityForResult(intent, TEXT_REQUEST);
-    }
-
-    /**
-     * Handle the data in the return intent from SecondActivity.
-     *
-     * @param requestCode Code for the SecondActivity request.
-     * @param resultCode  Code that comes back from SecondActivity.
-     * @param data        Intent data sent back from SecondActivity.
-     */
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_CODE && resultCode == RESULT_OK) {
+            String selectedItem = data.getStringExtra("selectedItem");
 
-        // Test for the right intent reply
-        if (requestCode == TEXT_REQUEST) {
-            // Test to make sure the intent reply result was good.
-            if (resultCode == RESULT_OK) {
-                String reply = data.getStringExtra(SecondActivity.EXTRA_REPLY);
-
-                // Make the reply head visible.
-                mReplyHeadTextView.setVisibility(View.VISIBLE);
-
-                // Set the reply and make it visible.
-                mReplyTextView.setText(reply);
-                mReplyTextView.setVisibility(View.VISIBLE);
+            // Find the first empty TextView and set the selected item
+            for (TextView item : shoppingList) {
+                if (item.getText().toString().isEmpty()) {
+                    item.setText(selectedItem);
+                    break;
+                }
             }
         }
     }
 
+    // Save state on rotation
     @Override
-    public void onSaveInstanceState(Bundle outState) {
+    protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        if (mReplyHeadTextView.getVisibility() == View.VISIBLE) {
-            outState.putBoolean("reply_visible", true);
-            outState.putString("reply_text",mReplyTextView.getText().toString());
+        String[] currentList = new String[12];
+        for (int i = 0; i < shoppingList.length; i++) {
+            if (shoppingList[i] != null) {  // Tambahkan pengecekan null
+                currentList[i] = shoppingList[i].getText().toString();
+            } else {
+                currentList[i] = "";  // Atur nilai default jika TextView null
+            }
         }
-
+        outState.putStringArray(SHOPPING_LIST_KEY, currentList);
     }
-
 }

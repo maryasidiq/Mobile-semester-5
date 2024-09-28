@@ -1,63 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright 2016 Google Inc.
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License. -->
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".SecondActivity">
-
-    <TextView
-        android:id="@+id/text_header"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/activity_vertical_margin"
-        android:text="@string/text_header"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textStyle="bold" />
-
-
-    <TextView
-        android:id="@+id/text_message"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/text_header"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:layout_marginStart="@dimen/activity_horizontal_margin"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+    android:orientation="vertical"
+    android:padding="16dp">
 
     <Button
-        android:id="@+id/button_second"
+        android:id="@+id/cheeseButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:onClick="returnReply"
-        android:text="@string/button_second" />
+        android:text="Cheese" />
 
-    <EditText
-        android:id="@+id/editText_second"
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/riceButton"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_toLeftOf="@+id/button_second"
-        android:layout_toStartOf="@id/button_second"
-        android:hint="@string/editText_second" />
+        android:text="Rice" />
 
-</RelativeLayout>
+    <Button
+        android:id="@+id/applesButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Apples" />
+
+    <Button
+        android:id="@+id/watermelonButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="WaterMelon" />
+
+    <Button
+        android:id="@+id/waterButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Water" />
+
+    <Button
+        android:id="@+id/meatballButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Meatball" />
+
+    <Button
+        android:id="@+id/chickenButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chicken" />
+
+    <Button
+        android:id="@+id/catfishButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="catfish" />
+
+    <Button
+        android:id="@+id/snackButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Snack" />
+
+    <Button
+        android:id="@+id/avocadoButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Avocado" />
+
+    <Button
+        android:id="@+id/dimsumButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dimsum" />
+
+    <Button
+        android:id="@+id/orogButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="orog-orog" />
+    <!-- Add more buttons for common items -->
+</LinearLayout>
